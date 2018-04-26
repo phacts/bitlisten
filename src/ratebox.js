@@ -1,6 +1,6 @@
 var rateboxTimeout;
 var currentExchange;
-var ratebox_ms = 3000; // 3 second update interval
+var ratebox_ms = 7000; // was 3 second update interval
 var globalRate = -1; // set upon first rate received
 
 function setGlobalRate(rate) {
@@ -14,8 +14,11 @@ function setGlobalRate(rate) {
 }
 
 rateboxGetRate = function() {
-	$.getJSON("https://blockchain.info/ticker?cors=true", function(data) {
-        setGlobalRate(data.USD.last);
+  // $.getJSON("https://blockchain.info/ticker?cors=true", function(data) {
+  $.getJSON("https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/", function(data) {
+        // setGlobalRate(data.USD.last);
+        console.log(data, 'this is data');
+        setGlobalRate(data.price_usd);
     });
 };
 
@@ -34,13 +37,13 @@ switchExchange = function(exchangeName) {
 	currentExchange = exchangeName;
 	$("#rate").html("---");
 	
-	if (exchangeName == "bitstamp") {
-		$("#bitstampRate").css("color", "white");
-		$("#mtgoxRate").css("color", "gray");
-	} else if (exchangeName == "mtgox") {
-		$("#mtgoxRate").css("color", "white");
-		$("#bitstampRate").css("color", "gray");
-	}
+	// if (exchangeName == "bitstamp") {
+	// 	$("#bitstampRate").css("color", "white");
+	// 	$("#mtgoxRate").css("color", "gray");
+	// } else if (exchangeName == "mtgox") {
+	// 	$("#mtgoxRate").css("color", "white");
+	// 	$("#bitstampRate").css("color", "gray");
+	// }
 	
 	rateboxGetRate();
 };

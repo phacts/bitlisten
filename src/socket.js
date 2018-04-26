@@ -17,7 +17,7 @@ TransactionSocket.init = function() {
 		TransactionSocket.connection.close();
 
 	if ('WebSocket' in window) {
-		var connection = new ReconnectingWebSocket('wss://ws.blockchain.info/inv');
+		var connection = new ReconnectingWebSocket('wss://ws.blockchain.info/bch/inv');
 		TransactionSocket.connection = connection;
 
 		StatusBox.reconnecting("blockchain");
@@ -54,7 +54,7 @@ TransactionSocket.init = function() {
 		connection.onmessage = function(e) {
 			
 			var data = JSON.parse(e.data);
-			
+			console.log(data, 'data from web socket');
 			if (data.op == "no_data") {
 			    TransactionSocket.close();
 			    setTimeout(TransactionSocket.init, transactionSocketDelay);
@@ -100,7 +100,7 @@ TransactionSocket.init = function() {
 				// Filter out the orphaned blocks.
 				if (blockHeight > lastBlockHeight) {
 					lastBlockHeight = blockHeight;
-					console.log("New Block");
+					console.log("New Block", data);
 					new Block(blockHeight, transactions, volumeSent, blockSize);
 				}
 			}

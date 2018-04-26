@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     connect: {
       all: {
         options: {
-          port: 8000,
+          port: 8080,
           keepalive: true
         }
       }

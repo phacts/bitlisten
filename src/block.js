@@ -6,7 +6,7 @@ function Block(height, numTransactions, outputTotal, blockSize) {
 	if (document.visibilityState === "visible") {
 		Floatable.call(this);
 
-		var outputBTC = Math.floor(outputTotal / satoshi) + " BTC";
+		var outputBTC = Math.floor(outputTotal / satoshi) + " BCH";
 		var blockSizeKB = Math.floor(blockSize / 1024) + " KB";
 
 		this.width = this.height = 500;

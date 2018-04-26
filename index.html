@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>BitListen - Bitcoin Transaction Visualizer</title>
-		<meta name="description" content="Realtime Bitcoin transaction visualizer. See and hear new transactions, trades and blocks as they occur.">
-		<meta name="keywords" content="BitListen,Listen To Bitcoin,Bitcoin,transactions,visualizer,trades,mtgox,blockchain">
-		<meta name="author" content="Maximillian Laumeister">
-		<link rel="author" href="https://plus.google.com/100865127821381452608/posts" />
+		<title>BitListen.Cash - Bitcoin Cash Transaction Visualizer</title>
+		<meta name="description" content="Realtime Bitcoin Cash transaction visualizer. See and hear new transactions, trades and blocks as they occur.">
+		<meta name="keywords" content="BitListen,Listen To Bitcoin Cash,Bitcoin Cash,Bitcoin,transactions,visualizer,trades,blockchain">
+		<meta name="author" content="Steve Grimm">
 		<link rel="stylesheet" type="text/css" href="jquery.nouislider.custom.css">
 		<link rel="stylesheet" type="text/css" href="engine.css">
 		<!--[if IE]>
@@ -21,22 +20,22 @@
 	        {
 	          "@context": "http://schema.org",
 	          "@type": "WebApplication",
-	          "name": "BitListen",
-	          "alternateName": "Listen To Bitcoin",
-	          "url": "http://www.bitlisten.com",
+	          "name": "BitListen.CASH",
+	          "alternateName": "Listen To Bitcoin Cash",
+	          "url": "http://www.bitlisten.cash",
 	          "applicationCategory": "Visualization",
 	          "license": "https://opensource.org/licenses/MIT",
 	          "operatingSystem": "all",
 	          "sameAs": [
-	              "https://en.wikipedia.org/wiki/BitListen",
-	              "https://www.wikidata.org/wiki/Q25990592",
-	              "https://www.maxlaumeister.com/projects/bitlisten/",
-	              "https://github.com/MaxLaumeister/bitlisten"
+	              // "https://en.wikipedia.org/wiki/BitListen",
+	              // "https://www.wikidata.org/wiki/Q25990592",
+	              // "https://www.maxlaumeister.com/projects/bitlisten/",
+	              // "https://github.com/MaxLaumeister/bitlisten"
 	          ],
 	          "author": {
 	              "@type" : "Person",
-	              "name" : "Maximillian Laumeister",
-	              "url" : "https://www.maxlaumeister.com/"
+	              "name" : "Steve Grimm",
+	              "url" : "https://www.stevegrimm.info/"
 	          },
 	          "offers": {
 	            "@type": "Offer",
@@ -47,26 +46,27 @@
 	        </script>
 
 	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		// TODO: Update with a different tracker
+	  // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-24440376-9', 'bitlisten.com');
-	  ga('send', 'pageview');
+	  // ga('create', 'UA-24440376-9', 'bitlisten.com');
+	  // ga('send', 'pageview');
 
 	</script>
 	</head>
 	<body>
 		<div id="header" class="serif interface">
 			<div id="rateBox">
-				<span id="rate">---</span> <span id="units">USD / BTC</span><br />
+				<span id="rate">---</span> <span id="units">USD / BCH</span><br />
 				<span class="rateButton" id="bitstampRate" onclick="switchExchange('bitstamp');">Bitstamp</span>
 			</div>
 			<img src="images/logo.png" alt="BitListen">
 			<div id="headerInfo">
 				<p>
-					Realtime Bitcoin transaction visualizer. (Formerly 'Listen To Bitcoin').
+					Realtime Bitcoin Cash transaction visualizer. (Forked from bitlisten.com).
 				</p>
 				<p>
 					Most donations get highlighted: <span id="donationAddress" qrtarget="bitcoin:1istendqWJ1mKvrdRUQZDL2F3tVDDyKdj">1istendqWJ1mKvrdRUQZDL2F3tVDDyKdj</span>
@@ -74,7 +74,7 @@
 					<span id="musicianDonation"></span>
 				</p>
 				<p class="subdued">
-					By <a href="https://www.maxlaumeister.com/">Maximillian Laumeister</a> &bull; <a href="https://www.maxlaumeister.com/contact/">Contact</a> &bull; <a href="https://github.com/MaxLaumeister/bitlisten">Source Code</a>
+					By <a href="https://www.stevegrimm.info/">Steve Grimm</a> <!-- &bull; <a href="https://www.maxlaumeister.com/contact/">Contact</a>  -->&bull; <a href="https://github.com/phacts/bitlisten">Source Code</a>
 				</p>
 			</div>
 		</div>
@@ -122,7 +122,7 @@
 							<p>
 								<label class="disabled">
 								    <input id="showDollarCheckBox" type='checkbox' onchange='globalShowDollar = this.checked' disabled="disabled">
-									Show units in USD instead of BTC
+									Show units in USD instead of BCH
 								</label>
 							</p>
 						</div>
