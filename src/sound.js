@@ -11,8 +11,8 @@ function Sound() {
 
 var soundBank = [];
 	// the second number is the number of sound files available
-	soundBank[0] = ["celesta", 22];
-	soundBank[1] = ["planet", 33];
+	soundBank[0] = ["planet", 33];
+	soundBank[1] = ["celesta", 22];
 	soundBank[2] = ["wikki", 13];
 
 function zeroPad(num, places) {
@@ -24,10 +24,10 @@ Sound.loadup = function(){
 	var newSound;
 	var istring;
 
-	// sound0 = celesta
+	// sound0 = planet
 	sound0 = []; 
 
-    // sound1 = planet
+    // sound1 = celesta
 	sound1 = []; 
 
     // sound2 = celestaB
@@ -48,9 +48,6 @@ Sound.loadup = function(){
 
 
 Sound.init = function() {
-
-	// Default to Planet by ensuring that it is selected.
-	$('#sound-select').val("1");
 
 	// Initialize sound toggle button
 	$("#volumeControl").click(function() {
@@ -81,17 +78,16 @@ Sound.init = function() {
 	});
 	
 	globalScalePitch = $("#scalePitchCheckBox").attr("checked");
-	Sound.change();
+	Sound.change(0);
 };
 
-Sound.change = function() {
-	var instrument_number = parseInt($('#sound-select').val(), 10);
+Sound.change = function(instrument_number) {
 	var musicianString = "Donate to instrument creator (BTC): ";
 	var i;
-	// INSTRUMENT 0
-	if (instrument_number === 0 ) {
+	// INSTRUMENT 1
+	if (instrument_number === 1) {
 		// Load sound and swells if not already loaded
-		if (sound0.length === 0) {
+		if (sound1.length === 0) {
 			for (i = 1; i <= 22; i++) {
 				istring = zeroPad(i, 3);
 				newSound = new Howl({
@@ -99,7 +95,7 @@ Sound.change = function() {
 							   "sounds/celesta/" + "celesta" + istring + ".mp3"],
 						autoplay: false
 				});
-				sound0.push(newSound);
+				sound1.push(newSound);
 			}
 		}
 		if (swells0.length === 0) {
@@ -109,17 +105,17 @@ Sound.change = function() {
 							"sounds/swells0/swell" + i +".mp3"],
 					autoplay: false
 				});
-				swells0.push(newSound);
+				swells1.push(newSound);
 			}
 		}
-		currentSound = sound0;
-		currentSwells = swells0;
+		currentSound = sound1;
+		currentSwells = swells1;
 		$('#musicianDonation').text("");
 	}
-	// INSTRUMENT 1
-	else if (instrument_number === 1) {
+	// INSTRUMENT 0
+	else if (instrument_number === 0) {
 	    // Load sound and swells if not already loaded
-		if (sound1.length === 0) {
+		if (sound0.length === 0) {
 			for (i = 1; i <= 33; i++) {
 				istring = zeroPad(i, 3);
 				newSound = new Howl({
@@ -127,7 +123,7 @@ Sound.change = function() {
 							   "sounds/planet/" + "planet" + istring + ".mp3"],
 						autoplay: false
 				});
-				sound1.push(newSound);
+				sound0.push(newSound);
 			}
 		}
         if (swells1.length === 0) {
@@ -137,11 +133,11 @@ Sound.change = function() {
 							"sounds/swells1/planetswell" + i +".mp3"],
 					autoplay: false
 				});
-				swells1.push(newSound);
+				swells0.push(newSound);
 			}
 		}
-		currentSound = sound1;
-		currentSwells = swells1;
+		currentSound = sound0;
+		currentSwells = swells0;
 		SOUND_DONATION_ADDRESS = "144b31mmaWQVDQFiUPo6HEzxc2Dm83WXrW";
 		$('#musicianDonation').html(musicianString + "<span>" + SOUND_DONATION_ADDRESS + "</span>");
 	}

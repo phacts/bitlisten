@@ -122,9 +122,7 @@ $(window).bind("load", function() {
 	window.requestAnimationFrame(globalUpdate);
 	
 	Sound.loadup();
-	setTimeout(function() {
-		Sound.init();
-	}, 2000);
+	Sound.init(0);
 });
 
 var endResize = function() {
