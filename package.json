@@ -1,7 +1,7 @@
 {
-  "name": "BitListen",
-  "author": "Maximillian Laumeister",
-  "version": "1.0.0",
+  "name": "BitListen.Cash",
+  "author": "Steve Grimm",
+  "version": "1.0",
   "devDependencies": {
     "grunt-todos": "~0.3.0",
     "grunt-newer": "~1.1.0",

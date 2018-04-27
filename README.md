@@ -1,8 +1,8 @@
-## BitListen - Bitcoin Transaction Visualizer ##
+## BitListen.Cash - Bitcoin Cash Transaction Visualizer ##
 
-Current version hosted at [**BitListen.com**](http://bitlisten.com/). Project formerly known as "Listen to Bitcoin" (ListenToBitcoin.com has been sold.)
+Current version hosted at [**BitListen.cash**](https://bitlisten.cash/). Project forked from [**BitListen.com**](http://bitlisten.com/).
 
-Realtime Bitcoin transaction visualizer written in HTML/Javascript. See and hear new transactions and blocks as they propagate through the Bitcoin Network.
+Realtime Bitcoin Cash transaction visualizer written in HTML/Javascript. See and hear new transactions and blocks as they propagate through the Bitcoin Cash Network.
 
 ### Building ###
 
@@ -28,8 +28,8 @@ BitListen uses these libraries:
 BitListen uses these APIs:
 
 * [Blockchain.info](https://blockchain.info/) WebSocket API (For Transactions)
-* [Bitstamp.net](https://www.bitstamp.net/) WebSocket API (For Price Ticker)
+* [CointMarketCap.com](https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/) REST API (For Price Ticker)
 
 ### License ###
 
-If you distribute this project in part or in full, please attribute with a link to [the GitHub page](https://github.com/MaxLaumeister/bitlisten). This software is available under the MIT License, details in the included `LICENSE.md` file.
+If you distribute this project in part or in full, please attribute with a link to the original bitlisten [GitHub page](https://github.com/MaxLaumeister/bitlisten). This software is available under the MIT License, details in the included `LICENSE.md` file.
