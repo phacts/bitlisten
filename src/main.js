@@ -144,20 +144,20 @@ var hideChart = function() {
 };
 
 var showChart = function() {
-	$("#chartElement").show();
-	$("#showChart").hide();
-	$("#chartCell").width(prevChartWidth);
-	$("#chartCell").show();
-	$(window).trigger("resize");
-	if ($("#bitcoinChart").length === 0) {
-		// Load the iframe
-		$("#chartHolder").html('<iframe id="bitcoinChart" scrolling="no" frameBorder="0" src="http://bitcoin.clarkmoody.com/widget/chart/zeroblock/"></iframe>');
-	}
-	$("#pageSplitter").colResizable({
-		liveDrag: true,
-		onDrag: updateLayoutWidth,
-		onResize: endResize
-	});
+	// $("#chartElement").show();
+	// $("#showChart").hide();
+	// $("#chartCell").width(prevChartWidth);
+	// $("#chartCell").show();
+	// $(window).trigger("resize");
+	// if ($("#bitcoinChart").length === 0) {
+	// 	// Load the iframe
+	// 	$("#chartHolder").html('<iframe id="bitcoinChart" scrolling="no" frameBorder="0" src="http://bitcoin.clarkmoody.com/widget/chart/zeroblock/"></iframe>');
+	// }
+	// $("#pageSplitter").colResizable({
+	// 	liveDrag: true,
+	// 	onDrag: updateLayoutWidth,
+	// 	onResize: endResize
+	// });
 };
 
 $(window).resize(function() {

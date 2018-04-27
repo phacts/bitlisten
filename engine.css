@@ -10,6 +10,20 @@
     src: url(lib/BTC.ttf);
 }
 
+.rotate {
+	/* Safari */
+	-webkit-transform: rotate(-30deg);
+
+	/* Firefox */
+	-moz-transform: rotate(-30deg);
+
+	/* IE */
+	-ms-transform: rotate(-30deg);
+
+	/* Opera */
+	-o-transform: rotate(-30deg);
+}
+
 body {
     position: absolute;
 	width: 100%;
