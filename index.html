@@ -107,9 +107,9 @@
 					<div id="soundControls" class="interface">
 						<div id="scalePitch" class="monospace">
 							<p>Select Instrument:
-							<select onchange="Sound.change(parseInt($(this).val(), 10));">
+							<select id="sound-select" onchange="Sound.change();">
 								<option value="0">Celesta</option>
-								<option value="1" selected="selected">Planet</option>
+								<option value="1">Planet</option>
 								<option value="2">Wikki</option>
 							</select>
 							</p>
