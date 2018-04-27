@@ -79,14 +79,14 @@ Sound.init = function() {
 	});
 	
 	globalScalePitch = $("#scalePitchCheckBox").attr("checked");
-	Sound.change(0);
+	Sound.change(1);
 };
 
 Sound.change = function(instrument_number) {
 	var musicianString = "Donate to instrument creator (BTC): ";
 	var i;
 	// INSTRUMENT 0
-	if (instrument_number === 1 ) {
+	if (instrument_number === 0 ) {
 		// Load sound and swells if not already loaded
 		if (sound0.length === 0) {
 			for (i = 1; i <= 22; i++) {
@@ -114,7 +114,7 @@ Sound.change = function(instrument_number) {
 		$('#musicianDonation').text("");
 	}
 	// INSTRUMENT 1
-	else if (instrument_number === 0) {
+	else if (instrument_number === 1) {
 	    // Load sound and swells if not already loaded
 		if (sound1.length === 0) {
 			for (i = 1; i <= 33; i++) {
