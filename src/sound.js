@@ -49,6 +49,8 @@ Sound.loadup = function(){
 
 Sound.init = function() {
 
+	// Default to Planet by ensuring that it is selected.
+	$('#sound-select').val("1");
 
 	// Initialize sound toggle button
 	$("#volumeControl").click(function() {
@@ -79,10 +81,11 @@ Sound.init = function() {
 	});
 	
 	globalScalePitch = $("#scalePitchCheckBox").attr("checked");
-	Sound.change(1);
+	Sound.change();
 };
 
-Sound.change = function(instrument_number) {
+Sound.change = function() {
+	var instrument_number = parseInt($('#sound-select').val(), 10);
 	var musicianString = "Donate to instrument creator (BTC): ";
 	var i;
 	// INSTRUMENT 0
