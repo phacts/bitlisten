@@ -83,7 +83,7 @@ Sound.init = function() {
 };
 
 Sound.change = function(instrument_number) {
-	var musicianString = "Donate to instrument creator: ";
+	var musicianString = "Donate to instrument creator (BTC): ";
 	var i;
 	// INSTRUMENT 0
 	if (instrument_number === 0 ) {
