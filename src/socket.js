@@ -54,7 +54,7 @@ TransactionSocket.init = function() {
 		connection.onmessage = function(e) {
 			
 			var data = JSON.parse(e.data);
-			// console.log(data, 'data from web socket');
+			console.log(data, 'data from web socket');
 			if (data.op == "no_data") {
 			    TransactionSocket.close();
 			    setTimeout(TransactionSocket.init, transactionSocketDelay);
@@ -78,6 +78,7 @@ TransactionSocket.init = function() {
 				var outputs = data.x.out;
 				for (var j = 0; j < outputs.length; j++) {
 					if ((outputs[j].addr) == DONATION_ADDRESS) {
+						console.log('found donation!', outputs[j]);
 						bitcoins = data.x.out[j].value / satoshi;
 						new Transaction(bitcoins, true);
 						return;
