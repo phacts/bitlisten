@@ -54,7 +54,7 @@ TransactionSocket.init = function() {
 		connection.onmessage = function(e) {
 			
 			var data = JSON.parse(e.data);
-			console.log(data, 'data from web socket');
+			// console.log(data, 'data from web socket');
 			if (data.op == "no_data") {
 			    TransactionSocket.close();
 			    setTimeout(TransactionSocket.init, transactionSocketDelay);
