@@ -77,6 +77,7 @@ TransactionSocket.init = function() {
                                 var soundDonation = false;
 				var outputs = data.x.out;
 				for (var j = 0; j < outputs.length; j++) {
+					// console.log('looking for donation!', outputs[j]);
 					if ((outputs[j].addr) == DONATION_ADDRESS) {
 						console.log('found donation!', outputs[j]);
 						bitcoins = data.x.out[j].value / satoshi;
