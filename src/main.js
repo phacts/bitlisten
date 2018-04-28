@@ -40,7 +40,8 @@ $(document).ready(function() {
 	
 	$("#chartCell").hide();
 	
-	DONATION_ADDRESS = $("#donationAddress").html();
+	// DONATION_ADDRESS = $("#donationAddress").html().replace('bitcoincash:', '');
+	DONATION_ADDRESS = "1CXEWG16ec6mjJbPxnSUE2xHvmzMiB1ZVp"; // NON cash address!
 	// Because the user has javascript running:
 	$("#noJavascript").css("display", "none");
 
