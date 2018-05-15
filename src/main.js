@@ -124,6 +124,17 @@ $(window).bind("load", function() {
 	
 	Sound.loadup();
 	Sound.init(0);
+
+	if (Howler.ctx.state !== 'running') {
+		$('#init_me').attr('style', 'display:inherit;');
+	}
+
+	$('#init_me').bind('click', function($event) {
+		$event.preventDefault();
+		Howler.ctx.resume();
+		$(this).attr('style', 'display:none;');
+		return false;
+	});
 });
 
 var endResize = function() {

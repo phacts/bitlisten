@@ -5,6 +5,8 @@ var globalShowDollar = false;
 //init volume at 50%
 Howler.volume(globalVolume * 0.01);
 
+// console.log(Howler.ctx, 'context');
+
 function Sound() {
 
 }
@@ -91,7 +93,7 @@ Sound.change = function(instrument_number) {
 			for (i = 1; i <= 22; i++) {
 				istring = zeroPad(i, 3);
 				newSound = new Howl({
-						urls: ["sounds/celesta/" + "celesta" + istring + ".ogg",
+						src: ["sounds/celesta/" + "celesta" + istring + ".ogg",
 							   "sounds/celesta/" + "celesta" + istring + ".mp3"],
 						autoplay: false
 				});
@@ -101,7 +103,7 @@ Sound.change = function(instrument_number) {
 		if (swells0.length === 0) {
 			for (i = 1; i <= 3; i++) {
 				newSound = new Howl({
-					urls: ["sounds/swells0/swell" + i +".ogg",
+					src: ["sounds/swells0/swell" + i +".ogg",
 							"sounds/swells0/swell" + i +".mp3"],
 					autoplay: false
 				});
@@ -119,7 +121,7 @@ Sound.change = function(instrument_number) {
 			for (i = 1; i <= 33; i++) {
 				istring = zeroPad(i, 3);
 				newSound = new Howl({
-						urls: ["sounds/planet/" + "planet" + istring + ".ogg",
+						src: ["sounds/planet/" + "planet" + istring + ".ogg",
 							   "sounds/planet/" + "planet" + istring + ".mp3"],
 						autoplay: false
 				});
@@ -129,7 +131,7 @@ Sound.change = function(instrument_number) {
         if (swells1.length === 0) {
 			for (i = 1; i <= 3; i++) {
 				newSound = new Howl({
-					urls: ["sounds/swells1/planetswell" + i +".ogg",
+					src: ["sounds/swells1/planetswell" + i +".ogg",
 							"sounds/swells1/planetswell" + i +".mp3"],
 					autoplay: false
 				});
