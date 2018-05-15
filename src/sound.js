@@ -5,6 +5,8 @@ var globalShowDollar = false;
 //init volume at 50%
 Howler.volume(globalVolume * 0.01);
 
+Howler.autoSuspend = false;
+
 // console.log(Howler.ctx, 'context');
 
 function Sound() {

@@ -124,8 +124,8 @@ $(window).bind("load", function() {
 	
 	Sound.loadup();
 	Sound.init(0);
-
-	if (Howler.ctx.state !== 'running') {
+// console.log(Howler.ctx.state, 'ctx state');
+	if (Howler.ctx.state !== 'running' && /Google Inc/.test(navigator.vendor)) {
 		$('#init_me').attr('style', 'display:inherit;');
 	}
 
